@@ -7,6 +7,7 @@ import jakarta.persistence.Table;
 import lombok.Data;
 import org.hibernate.annotations.UuidGenerator;
 
+import java.util.List;
 import java.util.UUID;
 
 @Data
@@ -22,4 +23,6 @@ public class User {
     private String passwordHash;
     private String email;
     private String mobileNumber;
+    private List<UUID> droneIds;
+    private List<UUID> siteIds;
 }
