@@ -25,15 +25,27 @@ public class SiteServiceImpl   implements SiteService {
         this.siteMapper = siteMapper;
     }
 
+//    @Override
+//    public SiteDTO createSite(SiteDTO siteDTO) {
+//        Optional<Site> existingsite = siteRepository.findByName(siteDTO.getName());
+//        if (existingsite.isPresent()) {
+//            throw new SiteAlreadyExistsException("site  already exists with name " + siteDTO.getName());
+//        }
+//        Site site = new Site();
+//        Site saveSite = siteRepository.save(site);
+//        return siteMapper.toDTO(saveSite);
+//    }
+
     @Override
     public SiteDTO createSite(SiteDTO siteDTO) {
-        Optional<SiteDTO>  existingsite = siteRepository.findName();
-        if (existingsite.isPresent()) {
-            throw new SiteAlreadyExistsException("site  already exists with name " + siteDTO.getName());
+        Optional<Site> existingSite = siteRepository.findByName(siteDTO.getName());
+        if (existingSite.isPresent()) {
+            throw new SiteAlreadyExistsException("Site already exists with name " + siteDTO.getName());
         }
-        Site site = new Site();
-        Site saveSite = siteRepository.save(site);
+        Site site  = siteMapper.toEntity(siteDTO);
+        Site saveSite =  siteRepository.save(site);
         return siteMapper.toDTO(saveSite);
+
     }
 
     @Override
