@@ -55,7 +55,7 @@ public class SiteController {
 
 
 
-    @PutMapping
+    @PutMapping("/{id}")
     ResponseEntity<SiteDTO> updateSite( @PathVariable UUID id ,   @RequestBody SiteDTO siteDTO ){
         try {
             SiteDTO updatedUser = siteService.updateSite(id, siteDTO);
@@ -67,7 +67,7 @@ public class SiteController {
         }
     }
 
-   @DeleteMapping
+   @DeleteMapping("/{id}")
     ResponseEntity<SiteDTO>  deleteSite(@PathVariable UUID  id){
        try {
            siteService.deletesite(id);
