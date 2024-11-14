@@ -2,7 +2,10 @@ package com.dronex.mission_service.mapper;
 
 import com.dronex.mission_service.dto.MissionDTO;
 import com.dronex.mission_service.entity.Mission;
+import org.springframework.stereotype.Component;
 
+
+@Component
 public class MissionMapper {
 
     public static Mission toEntity(MissionDTO missionDTO) {

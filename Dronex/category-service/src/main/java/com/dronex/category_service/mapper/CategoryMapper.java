@@ -18,7 +18,7 @@ public class CategoryMapper {
         return category;
     }
 
-    public void updateSite(CategoryDTO dto, Category category) {
+    public void updateCategory(CategoryDTO dto, Category category) {
         if (dto.getName() != null) {
             category.setName(dto.getName());
         }

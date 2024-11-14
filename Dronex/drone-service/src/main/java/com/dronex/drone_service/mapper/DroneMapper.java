@@ -2,7 +2,10 @@ package com.dronex.drone_service.mapper;
 
 import com.dronex.drone_service.dto.DroneDTO;
 import com.dronex.drone_service.entity.Drone;
+import org.springframework.stereotype.Component;
 
+
+@Component
 public class DroneMapper {
 
     public static Drone toEntity(DroneDTO droneDTO) {
@@ -14,7 +17,7 @@ public class DroneMapper {
 
     public static DroneDTO toDTO(Drone drone) {
         DroneDTO droneDTO = new DroneDTO();
-        droneDTO.setName(droneDTO.getName());
+        droneDTO.setName(drone.getName());
         droneDTO.setSiteId(drone.getSiteId());
         return droneDTO;
     }

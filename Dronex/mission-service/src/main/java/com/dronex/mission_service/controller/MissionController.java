@@ -25,8 +25,8 @@ public class MissionController {
     }
 
 
-    @PostMapping("/")
-    public ResponseEntity<MissionDTO> registerUser(@Valid @RequestBody MissionDTO missionDTO) {
+    @PostMapping
+    public ResponseEntity<MissionDTO> registerMission(@Valid @RequestBody MissionDTO missionDTO) {
         try {
             MissionDTO createdMission = missionservice.registerMission(missionDTO);
             return ResponseEntity.status(HttpStatus.CREATED).body(createdMission);
@@ -48,7 +48,7 @@ public class MissionController {
 
 
     @PutMapping("/{id}")
-    public ResponseEntity<MissionDTO> updateUser(@PathVariable UUID id, @Valid @RequestBody MissionDTO missionDTO) {
+    public ResponseEntity<MissionDTO> updateMission(@PathVariable UUID id, @Valid @RequestBody MissionDTO missionDTO) {
         try {
             MissionDTO updatedMission = missionservice.updateMission(id, missionDTO);
             return ResponseEntity.ok(updatedMission);

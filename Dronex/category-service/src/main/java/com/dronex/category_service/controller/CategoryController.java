@@ -53,7 +53,7 @@ public class CategoryController {
     }
 
     @DeleteMapping("/{id}")
-    ResponseEntity<CategoryDTO>  deleteZCategory(@PathVariable UUID  id){
+    ResponseEntity<CategoryDTO>  deleteCategory(@PathVariable UUID  id){
         try {
             categoryService.deleteCategory(id);
             return ResponseEntity.noContent().build();

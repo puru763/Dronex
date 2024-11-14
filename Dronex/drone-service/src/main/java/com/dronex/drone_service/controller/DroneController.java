@@ -30,7 +30,7 @@ public  final DroneService droneService;
 
 
     @PostMapping("/")
-    public ResponseEntity<DroneDTO> registerUser(@Valid @RequestBody DroneDTO droneDTO) {
+    public ResponseEntity<DroneDTO> registerDrone(@Valid @RequestBody DroneDTO droneDTO) {
         try {
             DroneDTO createdrone = droneService.registerDrone(droneDTO);
             return ResponseEntity.status(HttpStatus.CREATED).body(createdrone);
@@ -38,6 +38,7 @@ public  final DroneService droneService;
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
     }
+
     //getDronesBySite=  this  we  need  to do it   with  web  client
 
 

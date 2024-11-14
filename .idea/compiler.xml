@@ -7,19 +7,25 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="drone-service" />
-        <module name="user-service" />
         <module name="category-service" />
+        <module name="discovery-server" />
         <module name="site-service" />
         <module name="mission-service" />
+        <module name="drone-service" />
+        <module name="user-service" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="service-registery" target="17" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="category-service" options="-parameters" />
+      <module name="discovery-server" options="-parameters" />
       <module name="drone-service" options="-parameters" />
       <module name="mission-service" options="-parameters" />
+      <module name="service-registery" options="-parameters" />
       <module name="site-service" options="-parameters" />
       <module name="user-service" options="-parameters" />
     </option>

@@ -27,7 +27,6 @@ public class Category {
     private  String name;
 
 
-    @ManyToOne
     private UUID siteID;
 
 }
