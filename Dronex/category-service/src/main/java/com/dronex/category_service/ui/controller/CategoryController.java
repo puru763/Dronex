@@ -1,7 +1,7 @@
-package com.dronex.category_service.controller;
+package com.dronex.category_service.ui.controller;
 
 
-import com.dronex.category_service.dto.CategoryDTO;
+import com.dronex.category_service.shared.dto.CategoryDTO;
 import com.dronex.category_service.exception.CategoryNotExistsException;
 import com.dronex.category_service.exception.InvalidCategoryInputException;
 import com.dronex.category_service.service.CategoryService;

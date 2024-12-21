@@ -1,10 +1,10 @@
 package com.dronex.drone_service.service.Impl;
 
-import com.dronex.drone_service.dto.DroneDTO;
-import com.dronex.drone_service.entity.Drone;
+import com.dronex.drone_service.shared.dto.DroneDTO;
+import com.dronex.drone_service.data.entity.Drone;
 import com.dronex.drone_service.exception.DroneNotExistsException;
-import com.dronex.drone_service.mapper.DroneMapper;
-import com.dronex.drone_service.repository.DroneRepository;
+import com.dronex.drone_service.shared.mapper.DroneMapper;
+import com.dronex.drone_service.data.repository.DroneRepository;
 import com.dronex.drone_service.service.DroneService;
 import org.springframework.stereotype.Service;
 

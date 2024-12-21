@@ -1,4 +1,4 @@
-package com.dronex.category_service.dto;
+package com.dronex.category_service.shared.dto;
 
 
 import lombok.Data;

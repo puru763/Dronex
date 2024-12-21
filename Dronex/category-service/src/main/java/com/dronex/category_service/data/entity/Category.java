@@ -1,4 +1,4 @@
-package com.dronex.category_service.entity;
+package com.dronex.category_service.data.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;

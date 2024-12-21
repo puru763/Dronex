@@ -1,4 +1,4 @@
-package com.dronex.site_service.controller;
+package com.dronex.site_service.ui.controller;
 
 import com.dronex.site_service.shared.dto.SiteDTO;
 import com.dronex.site_service.exception.InvalidSiteInputException;

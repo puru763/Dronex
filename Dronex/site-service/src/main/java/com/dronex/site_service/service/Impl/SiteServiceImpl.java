@@ -1,12 +1,12 @@
 package com.dronex.site_service.service.Impl;
 
 
-import com.dronex.site_service.dto.SiteDTO;
-import com.dronex.site_service.entity.Site;
+import com.dronex.site_service.shared.dto.SiteDTO;
+import com.dronex.site_service.data.entity.Site;
 import com.dronex.site_service.exception.SiteAlreadyExistsException;
 import com.dronex.site_service.exception.SiteNotExistsException;
-import com.dronex.site_service.mapper.SiteMapper;
-import com.dronex.site_service.repository.SiteRepository;
+import com.dronex.site_service.shared.mapper.SiteMapper;
+import com.dronex.site_service.data.repository.SiteRepository;
 import com.dronex.site_service.service.SiteService;
 import org.springframework.stereotype.Service;
 

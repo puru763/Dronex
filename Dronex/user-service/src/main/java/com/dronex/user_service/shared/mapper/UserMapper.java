@@ -1,6 +1,6 @@
-package com.dronex.user_service.mapper;
+package com.dronex.user_service.shared.mapper;
 
-import com.dronex.user_service.dto.UserDTO;
+import com.dronex.user_service.shared.dto.UserDTO;
 import com.dronex.user_service.data.entity.User;
 import org.springframework.stereotype.Component;
 

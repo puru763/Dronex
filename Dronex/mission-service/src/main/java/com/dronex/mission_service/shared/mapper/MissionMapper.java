@@ -1,7 +1,7 @@
-package com.dronex.mission_service.mapper;
+package com.dronex.mission_service.shared.mapper;
 
-import com.dronex.mission_service.dto.MissionDTO;
-import com.dronex.mission_service.entity.Mission;
+import com.dronex.mission_service.shared.dto.MissionDTO;
+import com.dronex.mission_service.data.entity.Mission;
 import org.springframework.stereotype.Component;
 
 

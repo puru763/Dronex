@@ -1,6 +1,6 @@
 package com.dronex.user_service.service;
 
-import com.dronex.user_service.dto.UserDTO;
+import com.dronex.user_service.shared.dto.UserDTO;
 
 import java.util.UUID;
 

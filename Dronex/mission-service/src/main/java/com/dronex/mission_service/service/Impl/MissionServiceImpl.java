@@ -1,10 +1,10 @@
 package com.dronex.mission_service.service.Impl;
 
-import com.dronex.mission_service.dto.MissionDTO;
-import com.dronex.mission_service.entity.Mission;
+import com.dronex.mission_service.shared.dto.MissionDTO;
+import com.dronex.mission_service.data.entity.Mission;
 import com.dronex.mission_service.exception.MissionNotExistsException;
-import com.dronex.mission_service.mapper.MissionMapper;
-import com.dronex.mission_service.repository.Missionrepository;
+import com.dronex.mission_service.shared.mapper.MissionMapper;
+import com.dronex.mission_service.data.repository.Missionrepository;
 import com.dronex.mission_service.service.Missionservice;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

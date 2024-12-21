@@ -1,7 +1,7 @@
-package com.dronex.category_service.repository;
+package com.dronex.category_service.data.repository;
 
 
-import com.dronex.category_service.entity.Category;
+import com.dronex.category_service.data.entity.Category;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

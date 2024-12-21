@@ -1,7 +1,7 @@
-package com.dronex.drone_service.mapper;
+package com.dronex.drone_service.shared.mapper;
 
-import com.dronex.drone_service.dto.DroneDTO;
-import com.dronex.drone_service.entity.Drone;
+import com.dronex.drone_service.shared.dto.DroneDTO;
+import com.dronex.drone_service.data.entity.Drone;
 import org.springframework.stereotype.Component;
 
 

@@ -1,4 +1,4 @@
-package com.dronex.mission_service.dto;
+package com.dronex.mission_service.shared.dto;
 
 
 import lombok.Data;

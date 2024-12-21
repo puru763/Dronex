@@ -1,6 +1,6 @@
-package com.dronex.mission_service.repository;
+package com.dronex.mission_service.data.repository;
 
-import com.dronex.mission_service.entity.Mission;
+import com.dronex.mission_service.data.entity.Mission;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,4 +1,4 @@
-package com.dronex.user_service.controller;
+package com.dronex.user_service.ui.controller;
 
 
 import com.dronex.user_service.shared.dto.UserDTO;

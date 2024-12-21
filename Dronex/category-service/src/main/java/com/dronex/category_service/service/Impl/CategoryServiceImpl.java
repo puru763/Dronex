@@ -1,11 +1,11 @@
 package com.dronex.category_service.service.Impl;
 
 
-import com.dronex.category_service.dto.CategoryDTO;
-import com.dronex.category_service.entity.Category;
+import com.dronex.category_service.shared.dto.CategoryDTO;
+import com.dronex.category_service.data.entity.Category;
 import com.dronex.category_service.exception.CategoryNotExistsException;
-import com.dronex.category_service.mapper.CategoryMapper;
-import com.dronex.category_service.repository.CategoryRepository;
+import com.dronex.category_service.shared.mapper.CategoryMapper;
+import com.dronex.category_service.data.repository.CategoryRepository;
 import com.dronex.category_service.service.CategoryService;
 import org.springframework.stereotype.Service;
 

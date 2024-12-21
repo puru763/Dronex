@@ -1,4 +1,4 @@
-package com.dronex.site_service.mapper;
+package com.dronex.site_service.shared.mapper;
 
 import com.dronex.site_service.shared.dto.SiteDTO;
 import com.dronex.site_service.data.entity.Site;

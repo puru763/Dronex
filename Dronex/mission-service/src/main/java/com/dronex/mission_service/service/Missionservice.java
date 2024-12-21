@@ -1,6 +1,6 @@
 package com.dronex.mission_service.service;
 
-import com.dronex.mission_service.dto.MissionDTO;
+import com.dronex.mission_service.shared.dto.MissionDTO;
 
 import java.util.UUID;
 

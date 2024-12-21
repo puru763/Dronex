@@ -1,4 +1,4 @@
-package com.dronex.mission_service.entity;
+package com.dronex.mission_service.data.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;

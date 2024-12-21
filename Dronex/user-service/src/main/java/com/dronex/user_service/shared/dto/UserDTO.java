@@ -1,4 +1,4 @@
-package com.dronex.user_service.dto;
+package com.dronex.user_service.shared.dto;
 
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;

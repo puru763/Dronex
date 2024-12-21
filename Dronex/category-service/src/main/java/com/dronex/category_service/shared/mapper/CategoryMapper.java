@@ -1,7 +1,7 @@
-package com.dronex.category_service.mapper;
+package com.dronex.category_service.shared.mapper;
 
-import com.dronex.category_service.dto.CategoryDTO;
-import com.dronex.category_service.entity.Category;
+import com.dronex.category_service.shared.dto.CategoryDTO;
+import com.dronex.category_service.data.entity.Category;
 import org.springframework.stereotype.Component;
 
 @Component

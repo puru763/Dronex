@@ -1,12 +1,12 @@
 package com.dronex.user_service.service.Impl;
 
 
-import com.dronex.user_service.dto.UserDTO;
-import com.dronex.user_service.entity.User;
+import com.dronex.user_service.shared.dto.UserDTO;
+import com.dronex.user_service.data.entity.User;
 import com.dronex.user_service.exception.UserAlreadyExistsException;
 import com.dronex.user_service.exception.UserNotExistsException;
-import com.dronex.user_service.mapper.UserMapper;
-import com.dronex.user_service.repository.UserRepository;
+import com.dronex.user_service.shared.mapper.UserMapper;
+import com.dronex.user_service.data.repository.UserRepository;
 import com.dronex.user_service.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

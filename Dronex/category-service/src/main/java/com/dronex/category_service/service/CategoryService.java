@@ -1,6 +1,6 @@
 package com.dronex.category_service.service;
 
-import com.dronex.category_service.dto.CategoryDTO;
+import com.dronex.category_service.shared.dto.CategoryDTO;
 
 import java.util.UUID;
 

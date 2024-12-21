@@ -1,7 +1,7 @@
-package com.dronex.user_service.repository;
+package com.dronex.user_service.data.repository;
 
 
-import com.dronex.user_service.entity.User;
+import com.dronex.user_service.data.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

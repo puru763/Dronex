@@ -1,7 +1,7 @@
-package com.dronex.mission_service.controller;
+package com.dronex.mission_service.ui.controller;
 
 
-import com.dronex.mission_service.dto.MissionDTO;
+import com.dronex.mission_service.shared.dto.MissionDTO;
 import com.dronex.mission_service.exception.InvalidMissionInputException;
 import com.dronex.mission_service.exception.MissionNotExistsException;
 import com.dronex.mission_service.service.Missionservice;

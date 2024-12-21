@@ -1,4 +1,4 @@
-package com.dronex.user_service.entity;
+package com.dronex.user_service.data.entity;
 
 
 import jakarta.persistence.ElementCollection;

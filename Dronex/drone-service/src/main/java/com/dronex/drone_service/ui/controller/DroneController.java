@@ -1,7 +1,7 @@
-package com.dronex.drone_service.controller;
+package com.dronex.drone_service.ui.controller;
 
 
-import com.dronex.drone_service.dto.DroneDTO;
+import com.dronex.drone_service.shared.dto.DroneDTO;
 import com.dronex.drone_service.exception.DroneNotExistsException;
 import com.dronex.drone_service.exception.InvalidDroneInputException;
 import com.dronex.drone_service.service.DroneService;

@@ -1,7 +1,7 @@
-package com.dronex.drone_service.repository;
+package com.dronex.drone_service.data.repository;
 
 
-import com.dronex.drone_service.entity.Drone;
+import com.dronex.drone_service.data.entity.Drone;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

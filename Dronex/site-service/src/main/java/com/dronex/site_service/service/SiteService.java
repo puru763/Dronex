@@ -1,6 +1,6 @@
 package com.dronex.site_service.service;
 
-import com.dronex.site_service.dto.SiteDTO;
+import com.dronex.site_service.shared.dto.SiteDTO;
 
 import java.util.UUID;
 
