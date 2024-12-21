@@ -1,7 +1,7 @@
 package com.dronex.user_service.controller;
 
 
-import com.dronex.user_service.dto.UserDTO;
+import com.dronex.user_service.shared.dto.UserDTO;
 import com.dronex.user_service.exception.InvalidUserInputException;
 import com.dronex.user_service.exception.UserNotExistsException;
 import com.dronex.user_service.service.UserService;

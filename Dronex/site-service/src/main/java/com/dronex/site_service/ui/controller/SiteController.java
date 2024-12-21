@@ -1,17 +1,15 @@
 package com.dronex.site_service.controller;
 
-import com.dronex.site_service.dto.SiteDTO;
-import com.dronex.site_service.entity.Site;
+import com.dronex.site_service.shared.dto.SiteDTO;
 import com.dronex.site_service.exception.InvalidSiteInputException;
 import com.dronex.site_service.exception.SiteNotExistsException;
-import com.dronex.site_service.repository.SiteRepository;
+import com.dronex.site_service.data.repository.SiteRepository;
 import com.dronex.site_service.service.SiteService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 import java.util.UUID;
 
 @RestController

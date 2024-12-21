@@ -1,7 +1,7 @@
 package com.dronex.site_service.mapper;
 
-import com.dronex.site_service.dto.SiteDTO;
-import com.dronex.site_service.entity.Site;
+import com.dronex.site_service.shared.dto.SiteDTO;
+import com.dronex.site_service.data.entity.Site;
 import org.springframework.stereotype.Component;
 
 

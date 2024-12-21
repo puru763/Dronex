@@ -1,10 +1,8 @@
 package com.dronex.user_service.mapper;
 
 import com.dronex.user_service.dto.UserDTO;
-import com.dronex.user_service.entity.User;
+import com.dronex.user_service.data.entity.User;
 import org.springframework.stereotype.Component;
-
-import java.util.Optional;
 
 @Component
 public class UserMapper {
