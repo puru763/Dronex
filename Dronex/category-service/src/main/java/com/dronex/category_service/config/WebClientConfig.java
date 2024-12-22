@@ -1,4 +1,4 @@
-package com.dronex.user_service.config;
+package com.dronex.category_service.config;
 
 
 import lombok.RequiredArgsConstructor;
@@ -11,17 +11,17 @@ import org.springframework.web.reactive.function.client.WebClient;
 @RequiredArgsConstructor
 public class WebClientConfig {
 
-   @Bean("defaultWebClientBuilder")
+    @Bean("defaultWebClientBuilder")
     @LoadBalanced
     public WebClient.Builder defaultWebClientBuilder() {
         return  WebClient.builder();
-   }
+    }
 
 
-   @Bean("DroneServiceClient")
-    public WebClient  DroneServiceClient( WebClient.Builder webClientBuilder){
-       return webClientBuilder.baseUrl("http://drone-service").build();
-   }
+    @Bean("UserServiceClient")
+    public WebClient  UserServiceClient( WebClient.Builder webClientBuilder){
+        return webClientBuilder.baseUrl("http://user-service").build();
+    }
 
 
 }
