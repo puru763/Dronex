@@ -18,6 +18,30 @@ import java.util.UUID;
 @Table(name = "category")
 public class Category {
 
+    public UUID getId() {
+        return id;
+    }
+
+    public void setId(UUID id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public UUID getSiteID() {
+        return siteID;
+    }
+
+    public void setSiteID(UUID siteID) {
+        this.siteID = siteID;
+    }
+
     @Id
     @UuidGenerator(style = UuidGenerator.Style.RANDOM)
     private UUID id;

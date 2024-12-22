@@ -15,6 +15,46 @@ import java.util.UUID;
 public class Mission {
 
 
+    public UUID getId() {
+        return id;
+    }
+
+    public void setId(UUID id) {
+        this.id = id;
+    }
+
+    public UUID getSiteId() {
+        return siteId;
+    }
+
+    public void setSiteId(UUID siteId) {
+        this.siteId = siteId;
+    }
+
+    public UUID getDroneId() {
+        return droneId;
+    }
+
+    public void setDroneId(UUID droneId) {
+        this.droneId = droneId;
+    }
+
+    public List<String> getWaypoints() {
+        return waypoints;
+    }
+
+    public void setWaypoints(List<String> waypoints) {
+        this.waypoints = waypoints;
+    }
+
+    public UUID getCategoryId() {
+        return categoryId;
+    }
+
+    public void setCategoryId(UUID categoryId) {
+        this.categoryId = categoryId;
+    }
+
     @Id
     @UuidGenerator(style = UuidGenerator.Style.RANDOM)
     private UUID id;

@@ -1,1 +1,44 @@
-spring.application.name=config-server
+server:
+  port: 8071
+
+spring:
+  application:
+    name: config-server
+
+  cloud:
+    config:
+      server:
+        git:
+          uri: git@github.com:puru763/Dronex-configuration.git
+          private-key: |-
+            -----BEGIN OPENSSH PRIVATE KEY-----
+            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
+            -----END OPENSSH PRIVATE KEY-----
+
+          ignore-local-ssh-settings: true
+
+#          fail-fast: true

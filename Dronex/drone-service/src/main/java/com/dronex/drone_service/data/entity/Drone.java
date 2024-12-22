@@ -13,6 +13,30 @@ import java.util.UUID;
 @Table(name = "drone")
 public class  Drone {
 
+    public UUID getId() {
+        return id;
+    }
+
+    public void setId(UUID id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public UUID getSiteId() {
+        return siteId;
+    }
+
+    public void setSiteId(UUID siteId) {
+        this.siteId = siteId;
+    }
+
     @Id
     @UuidGenerator(style = UuidGenerator.Style.RANDOM)
     private UUID id;

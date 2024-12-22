@@ -1,0 +1,7 @@
+
+
+spring:
+  application:
+     name: site-service
+  config :
+      import: "configserver:http://localhost:8071"

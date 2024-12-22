@@ -1,13 +1,13 @@
 package com.dronex.site_service.service.Impl;
 
 
+import com.dronex.site_service.data.repository.SiteRepository;
 import com.dronex.site_service.shared.dto.SiteDTO;
 import com.dronex.site_service.data.entity.Site;
-import com.dronex.site_service.exception.SiteAlreadyExistsException;
 import com.dronex.site_service.exception.SiteNotExistsException;
 import com.dronex.site_service.shared.mapper.SiteMapper;
-import com.dronex.site_service.data.repository.SiteRepository;
 import com.dronex.site_service.service.SiteService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -16,7 +16,7 @@ import java.util.UUID;
 @Service
 public class SiteServiceImpl   implements SiteService {
 
-
+    @Autowired
     final SiteRepository siteRepository;
     final SiteMapper siteMapper;
 
@@ -36,16 +36,21 @@ public class SiteServiceImpl   implements SiteService {
 //        return siteMapper.toDTO(saveSite);
 //    }
 
+//    @Override
+//    public SiteDTO createSite(SiteDTO siteDTO) {
+//        Optional<Site> existingSite = siteRepository.findByName(siteDTO.getName());
+//        if (existingSite.isPresent()) {
+//            throw new SiteAlreadyExistsException("Site already exists with name " + siteDTO.getName());
+//        }
+//        Site site  = siteMapper.toEntity(siteDTO);
+//        Site saveSite =  siteRepository.save(site);
+//        return siteMapper.toDTO(saveSite);
+//
+//    }
+
     @Override
     public SiteDTO createSite(SiteDTO siteDTO) {
-        Optional<Site> existingSite = siteRepository.findByName(siteDTO.getName());
-        if (existingSite.isPresent()) {
-            throw new SiteAlreadyExistsException("Site already exists with name " + siteDTO.getName());
-        }
-        Site site  = siteMapper.toEntity(siteDTO);
-        Site saveSite =  siteRepository.save(site);
-        return siteMapper.toDTO(saveSite);
-
+        return null;
     }
 
     @Override
