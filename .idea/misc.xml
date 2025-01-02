@@ -5,13 +5,14 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/Dronex/user-service/pom.xml" />
-        <option value="$PROJECT_DIR$/Dronex/drone-service/pom.xml" />
-        <option value="$PROJECT_DIR$/Dronex/site-service/pom.xml" />
-        <option value="$PROJECT_DIR$/Dronex/category-service/pom.xml" />
-        <option value="$PROJECT_DIR$/Dronex/mission-service/pom.xml" />
         <option value="$PROJECT_DIR$/Dronex/discovery-server/pom.xml" />
         <option value="$PROJECT_DIR$/Dronex/service-registery/pom.xml" />
         <option value="$PROJECT_DIR$/Dronex/config-server/pom.xml" />
+        <option value="$PROJECT_DIR$/Dronex/edge-server/pom.xml" />
+        <option value="$PROJECT_DIR$/Dronex/category-service/pom.xml" />
+        <option value="$PROJECT_DIR$/Dronex/mission-service/pom.xml" />
+        <option value="$PROJECT_DIR$/Dronex/site-service/pom.xml" />
+        <option value="$PROJECT_DIR$/Dronex/drone-service/pom.xml" />
       </list>
     </option>
   </component>

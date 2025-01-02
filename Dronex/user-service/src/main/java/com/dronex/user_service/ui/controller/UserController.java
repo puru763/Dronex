@@ -1,6 +1,7 @@
 package com.dronex.user_service.ui.controller;
 
 
+import com.dronex.user_service.domain.DroneDTO;
 import com.dronex.user_service.shared.dto.UserDTO;
 import com.dronex.user_service.exception.InvalidUserInputException;
 import com.dronex.user_service.exception.UserNotExistsException;
@@ -17,6 +18,9 @@ import java.util.UUID;
 public class UserController {
 
 
+
+
+    //////////
     final UserService userService;
 
     public UserController(UserService userService) {
@@ -66,6 +70,19 @@ public class UserController {
             return ResponseEntity.noContent().build();
         } catch (UserNotExistsException e) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+
+
+    //////dronr
+    @PostMapping("/register-drone")
+    public ResponseEntity<DroneDTO> registerDrone(@Valid @RequestBody DroneDTO droneDTO) {
+        try {
+            DroneDTO createdDrone = userService.registerDrone(droneDTO).getBody();
+            return ResponseEntity.status(HttpStatus.CREATED).body(createdDrone);
+        } catch (RuntimeException e) {
+//            logger.error("Failed to register drone: {}", e.getMessage());
+            return ResponseEntity.badRequest().body(null); // Return appropriate response
         }
     }
 

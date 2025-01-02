@@ -50,7 +50,9 @@ public class SiteServiceImpl   implements SiteService {
 
     @Override
     public SiteDTO createSite(SiteDTO siteDTO) {
-        return null;
+        Site site = siteMapper.toEntity(siteDTO);
+        Site savedUser =siteRepository.save(site);
+        return siteMapper.toDTO(savedUser);
     }
 
     @Override

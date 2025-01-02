@@ -1,6 +1,8 @@
 package com.dronex.user_service.service.Impl;
 
 
+import com.dronex.user_service.config.internal.DroneServiceClient;
+import com.dronex.user_service.domain.DroneDTO;
 import com.dronex.user_service.shared.dto.UserDTO;
 import com.dronex.user_service.data.entity.User;
 import com.dronex.user_service.exception.UserAlreadyExistsException;
@@ -8,8 +10,14 @@ import com.dronex.user_service.exception.UserNotExistsException;
 import com.dronex.user_service.shared.mapper.UserMapper;
 import com.dronex.user_service.data.repository.UserRepository;
 import com.dronex.user_service.service.UserService;
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
+import io.github.resilience4j.ratelimiter.annotation.RateLimiter;
+import io.github.resilience4j.retry.annotation.Retry;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -18,14 +26,19 @@ import java.util.UUID;
 @Service
 public class UserServiceImpl implements UserService {
 
-    private static final Logger log = LoggerFactory.getLogger(UserServiceImpl.class);
+    private static final Logger logger = LoggerFactory.getLogger(UserService.class);
+    private final DroneServiceClient droneServiceClient;
+    private static final Logger log = LoggerFactory.getLogger(UserService.class);
 
-    final UserMapper userMapper;
-    final UserRepository userRepository;
 
-    public UserServiceImpl(UserRepository userRepository, UserMapper userMapper) {
+    private final UserMapper userMapper;
+    private final UserRepository userRepository;
+
+
+    public UserServiceImpl(UserRepository userRepository, UserMapper userMapper, DroneServiceClient droneServiceClient) {
         this.userRepository = userRepository;
         this.userMapper = userMapper;
+        this.droneServiceClient = droneServiceClient;
     }
 
     @Override
@@ -73,6 +86,34 @@ public class UserServiceImpl implements UserService {
         }
         userRepository.delete(existingUser.get());
     }
+
+
+
+    //////////////////////////////////////  drone  thinhs ////////////////
+
+
+
+    @CircuitBreaker(name = "droneService", fallbackMethod = "fallbackRegisterDrone")
+    @Retry(name = "droneService")
+    @RateLimiter(name = "droneService")
+    public ResponseEntity<DroneDTO> registerDrone(DroneDTO droneDTO) {
+        return droneServiceClient.registerDrone(droneDTO);
+    }
+
+    public ResponseEntity<DroneDTO> fallbackRegisterDrone(DroneDTO droneDTO, Throwable throwable) {
+        // Log the error details
+        logger.error("Error registering drone: {}, Exception: {}", droneDTO, throwable.getMessage());
+
+        // Provide a meaningful fallback response
+        DroneDTO fallbackResponse = new DroneDTO("Fallback Model", "Service Unavailable");
+
+        // Optionally, you could notify a monitoring service or alert system here
+
+        return ResponseEntity.status(HttpStatus.SERVICE_UNAVAILABLE)
+                .body(fallbackResponse);
+    }
+
+
 
 
 }

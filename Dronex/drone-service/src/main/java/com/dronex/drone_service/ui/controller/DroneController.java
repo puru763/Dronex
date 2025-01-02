@@ -29,7 +29,7 @@ public  final DroneService droneService;
 	//deleteDrone
 
 
-    @PostMapping("/")
+    @PostMapping("/register-drone")
     public ResponseEntity<DroneDTO> registerDrone(@Valid @RequestBody DroneDTO droneDTO) {
         try {
             DroneDTO createdrone = droneService.registerDrone(droneDTO);

@@ -5,6 +5,7 @@
     <file url="file://$PROJECT_DIR$/Dronex/config-server/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Dronex/discovery-server/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Dronex/drone-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Dronex/edge-server/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Dronex/mission-service/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Dronex/service-registery/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Dronex/site-service/src/main/java" charset="UTF-8" />
