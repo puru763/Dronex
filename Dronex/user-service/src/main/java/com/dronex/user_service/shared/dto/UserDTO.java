@@ -1,19 +1,22 @@
 package com.dronex.user_service.shared.dto;
 
+import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 
 @Data
 public class UserDTO {
-    @NotNull
+
+
+    @NotEmpty(message = "username can not be a null or empty")
     private String username;
 
-    @NotNull
+    @NotEmpty(message = "passwordHash can not be a null or empty")
     private String passwordHash;
 
-    @NotNull
+    @NotEmpty(message = "email can not be a null or empty")
     private String email;
 
-    @NotNull
+    @NotEmpty(message = "mobileNumber can not be a null or empty")
     private String mobileNumber;
 }

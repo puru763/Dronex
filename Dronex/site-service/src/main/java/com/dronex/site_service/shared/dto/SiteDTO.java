@@ -1,6 +1,7 @@
 package com.dronex.site_service.shared.dto;
 
 
+import jakarta.validation.constraints.NotEmpty;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
@@ -9,6 +10,12 @@ import lombok.Setter;
 @Getter
 @Setter
 public class SiteDTO {
+
+
+    @NotEmpty(message = "Site name   can not be a null or empty")
+    private  String name;
+
+
     public String getName() {
         return name;
     }
@@ -17,5 +24,4 @@ public class SiteDTO {
         this.name = name;
     }
 
-    private  String name;
 }
