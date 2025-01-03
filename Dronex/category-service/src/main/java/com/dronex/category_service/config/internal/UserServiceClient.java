@@ -1,4 +1,4 @@
-package com.dronex.category_service.client;
+package com.dronex.category_service.config.internal;
 
 import com.dronex.category_service.domain.UserDTO;
 import org.springframework.http.ResponseEntity;
