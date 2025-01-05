@@ -14,4 +14,8 @@ public class DroneDTO {
 
     public DroneDTO(String fallbackModel, String serviceUnavailable) {
     }
+
+    public DroneDTO() {
+
+    }
 }

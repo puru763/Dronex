@@ -4,11 +4,14 @@ import com.dronex.mission_service.shared.dto.MissionDTO;
 import com.dronex.mission_service.data.entity.Mission;
 import org.springframework.stereotype.Component;
 
-
 @Component
 public class MissionMapper {
 
-    public static Mission toEntity(MissionDTO missionDTO) {
+    // Convert MissionDTO to Mission entity
+    public  Mission toEntity(MissionDTO missionDTO) {
+        if (missionDTO == null) {
+            return null;
+        }
         Mission mission = new Mission();
         mission.setSiteId(missionDTO.getSiteId());
         mission.setDroneId(missionDTO.getDroneId());
@@ -17,7 +20,11 @@ public class MissionMapper {
         return mission;
     }
 
-    public static MissionDTO toDTO(Mission mission) {
+    // Convert Mission entity to MissionDTO
+    public MissionDTO toDTO(Mission mission) {
+        if (mission == null) {
+            return null;
+        }
         MissionDTO missionDTO = new MissionDTO();
         missionDTO.setSiteId(mission.getSiteId());
         missionDTO.setDroneId(mission.getDroneId());
@@ -26,8 +33,12 @@ public class MissionMapper {
         return missionDTO;
     }
 
-
+    // Update existing Mission entity with values from MissionDTO
     public void updateMission(MissionDTO dto, Mission mission) {
+        if (dto == null || mission == null) {
+            return;
+        }
+
         if (dto.getSiteId() != null) {
             mission.setSiteId(dto.getSiteId());
         }

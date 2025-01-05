@@ -11,6 +11,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.UUID;
 
 @RestController
@@ -81,9 +82,29 @@ public class UserController {
             DroneDTO createdDrone = userService.registerDrone(droneDTO).getBody();
             return ResponseEntity.status(HttpStatus.CREATED).body(createdDrone);
         } catch (RuntimeException e) {
-//            logger.error("Failed to register drone: {}", e.getMessage());
             return ResponseEntity.badRequest().body(null); // Return appropriate response
         }
     }
+
+    @GetMapping("/getAllDroneByUser/{userId}")
+    public ResponseEntity<List<UserDTO>> getAllDroneByUser(@Valid @PathVariable UUID userId) {
+        try {
+            List<UserDTO> allDronesByUserId = userService.getAllDronesByUserId(userId);
+            return ResponseEntity.ok(allDronesByUserId);
+        } catch (RuntimeException e) {
+            return ResponseEntity.badRequest().body(null);
+        }
+    }
+
+    @GetMapping("/getAllSitesByUser/{userId}")
+    public ResponseEntity<List<UserDTO>> getAllSitesByUser(@Valid @PathVariable UUID userId) {
+        try {
+            List<UserDTO> allSitessByUserId = userService.getAllSitessByUserId(userId);
+            return ResponseEntity.ok(allSitessByUserId);
+        } catch (RuntimeException e) {
+            return ResponseEntity.badRequest().body(null);
+        }
+    }
+
 
 }

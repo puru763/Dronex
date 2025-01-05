@@ -15,4 +15,7 @@ public class UserDTO {
 
     @NotEmpty(message = "SiteId  can not be a null or empty")
     private UUID siteId;
+
+    public UserDTO(String message, Object o) {
+    }
 }

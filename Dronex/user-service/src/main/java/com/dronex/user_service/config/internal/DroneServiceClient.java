@@ -40,14 +40,15 @@ public class DroneServiceClient {
 
 
     public ResponseEntity<DroneDTO> fallbackRegisterDrone(DroneDTO droneDTO, Throwable throwable) {
-        // Log error details
         logger.error("Fallback triggered due to: {}", throwable.getMessage());
-
-        // Return a meaningful response indicating failure
         String message = "Drone service is currently unavailable. Please try again later.";
+        DroneDTO fallbackResponse = new DroneDTO(message, "Service Unavailable");
         return ResponseEntity.status(HttpStatus.SERVICE_UNAVAILABLE)
-                .body(new DroneDTO(message, null)); // You can customize the response body as needed
+                .body(fallbackResponse);
     }
+
+
+
 
 
 }

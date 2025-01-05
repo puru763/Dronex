@@ -4,6 +4,7 @@ import com.dronex.user_service.domain.DroneDTO;
 import com.dronex.user_service.shared.dto.UserDTO;
 import org.springframework.http.ResponseEntity;
 
+import java.util.List;
 import java.util.UUID;
 
 public interface UserService {
@@ -16,4 +17,8 @@ public interface UserService {
     UserDTO updateUser(UUID id, UserDTO userDTO);
 
     ResponseEntity<DroneDTO> registerDrone(DroneDTO droneDTO);
+
+    List<UserDTO> getAllDronesByUserId(UUID userId);
+
+    List<UserDTO> getAllSitesByUserId(UUID userId);
 }

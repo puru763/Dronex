@@ -20,6 +20,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import java.util.Collections;
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -57,12 +59,39 @@ public class UserServiceImpl implements UserService {
     @Override
     public UserDTO getUserById(UUID id) {
         Optional<User> existingUser = userRepository.findById(id);
-
         if (existingUser.isPresent()) {
             return userMapper.toDTO(existingUser.get());
         } else {
             throw new UserNotExistsException("User does not exist with this ID: " + id);
         }
+    }
+
+
+    @Override
+    public List<UserDTO> getAllDronesByUserId(UUID userId) {
+        List<UserDTO> allDrones = userRepository.findDroneByUserId(userId)
+                .orElseGet(Collections::emptyList);
+        if (allDrones.isEmpty()) {
+            logger.warn("No drones found for userId: {}", userId);
+        } else {
+            logger.info("Retrieved {} drones for userId: {}", allDrones.size(), userId);
+        }
+        return allDrones;
+    }
+
+
+
+    @Override
+    public List<UserDTO> getAllSitesByUserId(UUID userId) {
+        List<UserDTO> allSites = userRepository.findSitesByUserId(userId)
+                .orElseGet(Collections::emptyList);
+        if (allSites.isEmpty()) {
+            logger.warn("No sites found for userId: {}", userId);
+        } else {
+            logger.info("Retrieved {} sites for userId: {}", allSites.size(), userId);
+        }
+
+        return allSites;
     }
 
     @Override
@@ -99,6 +128,9 @@ public class UserServiceImpl implements UserService {
     public ResponseEntity<DroneDTO> registerDrone(DroneDTO droneDTO) {
         return droneServiceClient.registerDrone(droneDTO);
     }
+
+
+
 
     public ResponseEntity<DroneDTO> fallbackRegisterDrone(DroneDTO droneDTO, Throwable throwable) {
         // Log the error details
