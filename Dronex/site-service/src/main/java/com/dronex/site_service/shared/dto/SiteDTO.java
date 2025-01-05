@@ -15,6 +15,9 @@ public class SiteDTO {
     @NotEmpty(message = "Site name   can not be a null or empty")
     private  String name;
 
+    public SiteDTO(String message, String serviceUnavailable) {
+    }
+
 
     public String getName() {
         return name;

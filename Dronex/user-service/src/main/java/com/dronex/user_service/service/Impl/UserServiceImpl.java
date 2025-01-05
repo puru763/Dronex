@@ -3,6 +3,8 @@ package com.dronex.user_service.service.Impl;
 
 import com.dronex.user_service.config.internal.DroneServiceClient;
 import com.dronex.user_service.domain.DroneDTO;
+import com.dronex.user_service.domain.SitesDTO;
+import com.dronex.user_service.exception.SiteNotExistsException;
 import com.dronex.user_service.shared.dto.UserDTO;
 import com.dronex.user_service.data.entity.User;
 import com.dronex.user_service.exception.UserAlreadyExistsException;
@@ -24,6 +26,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -81,18 +84,7 @@ public class UserServiceImpl implements UserService {
 
 
 
-    @Override
-    public List<UserDTO> getAllSitesByUserId(UUID userId) {
-        List<UserDTO> allSites = userRepository.findSitesByUserId(userId)
-                .orElseGet(Collections::emptyList);
-        if (allSites.isEmpty()) {
-            logger.warn("No sites found for userId: {}", userId);
-        } else {
-            logger.info("Retrieved {} sites for userId: {}", allSites.size(), userId);
-        }
 
-        return allSites;
-    }
 
     @Override
     public UserDTO updateUser(UUID id, UserDTO userDTO) {
@@ -143,6 +135,26 @@ public class UserServiceImpl implements UserService {
 
         return ResponseEntity.status(HttpStatus.SERVICE_UNAVAILABLE)
                 .body(fallbackResponse);
+    }
+
+    ///////////////////////////////////////////
+
+
+
+    @Override
+    public List<SitesDTO> getAllSitesByUserId(UUID userId) {
+        if (userId == null) {
+          throw new IllegalArgumentException("User ID cannot be null");
+        }
+        logger.info("Fetching missions for userId: {}", userId);
+
+        List<SitesDTO> Sites = userRepository.findSitesByUserId(userId);
+        if (Sites == null || Sites.isEmpty()) {
+        logger.warn("No missions found for siteId: {}", userId);
+        throw new SiteNotExistsException("No missions found for site ID: " + userId);
+    }
+        return Sites.stream()
+                .collect(Collectors.toList());
     }
 
 

@@ -11,6 +11,9 @@ public class CategoryDTO {
     @NotEmpty(message = "Site  Name  can not be a null or empty")
     private  String name;
 
+    public CategoryDTO(String message, String serviceUnavailable) {
+    }
+
     public String getName() {
         return name;
     }

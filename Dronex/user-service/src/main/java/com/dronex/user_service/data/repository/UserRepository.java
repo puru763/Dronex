@@ -2,6 +2,7 @@ package com.dronex.user_service.data.repository;
 
 
 import com.dronex.user_service.data.entity.User;
+import com.dronex.user_service.domain.SitesDTO;
 import com.dronex.user_service.shared.dto.UserDTO;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
@@ -17,5 +18,5 @@ public interface UserRepository   extends JpaRepository<User ,UUID > {
 
     Optional<List<UserDTO>> findDroneByUserId(UUID userId);
 
-    Optional<List<UserDTO>> findSitesByUserId(UUID userId);
+    List<SitesDTO> findSitesByUserId(UUID userId);
 }

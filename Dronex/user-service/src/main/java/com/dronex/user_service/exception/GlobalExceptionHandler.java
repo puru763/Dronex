@@ -24,4 +24,10 @@ public class GlobalExceptionHandler {
     }
 
 
+    @ExceptionHandler(SiteNotExistsException.class)
+    public ResponseEntity<String> handleSiteNotExistsException(SiteNotExistsException ex) {
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ex.getMessage());
+    }
+
+
 }

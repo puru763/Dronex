@@ -2,6 +2,7 @@ package com.dronex.user_service.ui.controller;
 
 
 import com.dronex.user_service.domain.DroneDTO;
+import com.dronex.user_service.domain.SitesDTO;
 import com.dronex.user_service.shared.dto.UserDTO;
 import com.dronex.user_service.exception.InvalidUserInputException;
 import com.dronex.user_service.exception.UserNotExistsException;
@@ -96,15 +97,18 @@ public class UserController {
         }
     }
 
-    @GetMapping("/getAllSitesByUser/{userId}")
-    public ResponseEntity<List<UserDTO>> getAllSitesByUser(@Valid @PathVariable UUID userId) {
+    @GetMapping("/getAllSitesByUserId/{userId}")
+    public ResponseEntity<List<SitesDTO>> getAllSitesByUser(@Valid @PathVariable UUID userId) {
         try {
-            List<UserDTO> allSitessByUserId = userService.getAllSitessByUserId(userId);
+            List<SitesDTO> allSitessByUserId = userService.getAllSitesByUserId(userId);
             return ResponseEntity.ok(allSitessByUserId);
         } catch (RuntimeException e) {
             return ResponseEntity.badRequest().body(null);
         }
-    }
+        }
+
+
+
 
 
 }

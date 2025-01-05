@@ -1,6 +1,7 @@
 package com.dronex.user_service.service;
 
 import com.dronex.user_service.domain.DroneDTO;
+import com.dronex.user_service.domain.SitesDTO;
 import com.dronex.user_service.shared.dto.UserDTO;
 import org.springframework.http.ResponseEntity;
 
@@ -20,5 +21,5 @@ public interface UserService {
 
     List<UserDTO> getAllDronesByUserId(UUID userId);
 
-    List<UserDTO> getAllSitesByUserId(UUID userId);
+    List<SitesDTO> getAllSitesByUserId(UUID userId);
 }
